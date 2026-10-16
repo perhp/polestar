@@ -1,5 +1,34 @@
 # Changelog
 
+## 0.2.5 (unreleased)
+
+### For players
+
+- Polestar's interface is in French, translated by Yendi (thanks Yendi).
+- Reputation standings, item qualities, the Alliance and the Horde, the gear
+  slots on the upgrade line and the Dungeon Journal read exactly as the game
+  writes them, in every language ("Main Hand", "Shoulders" and "Dungeon
+  Journal" in English).
+
+### For contributors
+
+- `node tools/polestar.js i18n` keeps the interface translations, adapted
+  from Ding! by Yendi (@moust4ki): `status` lists the nine languages with
+  their counts, status (reviewed or AI-made) and translators; `check` (run in
+  CI) fails on a file Lua cannot load, a stale key or a broken format and
+  warns where a translation leaves out its glossary's word; `sync` adds the
+  texts the code gained to each file, commented out under their file, and
+  moves translations of texts it lost to a block at the end, never touching a
+  translation; `import` merges translations written apart.
+  docs/TRANSLATING.md.
+- The boat, zeppelin, tram and lift captions ("Next boat in 1:20") can be
+  translated: they were looked up through a variable, so no translator saw
+  them.
+- Options > About says so on a client whose translation was made with AI, with
+  the Discord invite.
+- Tests fake an Italian client (`fakeLocale('itIT', ...)`): Forever has none,
+  so no shipped language file replaces the fake strings.
+
 ## 0.2.4 (2026-10-16)
 
 ### For players
